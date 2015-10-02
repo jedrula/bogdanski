@@ -1,0 +1,21 @@
+body {
+
+	> .ember-view {
+		width: 600px;
+		margin: 0 auto;
+	}
+	
+	h1, h3 {
+		color: black;
+		text-align: center;
+		letter-spacing: 4px;
+	}
+
+	.slick-slide img{
+		margin: 0 auto;
+	}
+
+	address {
+		text-transform: uppercase;
+	}
+}
