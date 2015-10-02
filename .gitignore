@@ -17,3 +17,4 @@ npm-debug.log
 testem.log
 divshot.json
 /.divshot-cache
+/divshot-debug.log
