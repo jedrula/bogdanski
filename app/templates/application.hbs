@@ -1,26 +1,16 @@
-<h1 id="title">B/O/G/D/A/N/S/K/I</h1>
+<h1 id="title">{{#link-to "index"}}B/O/G/D/A/Ń/S/K/I{{/link-to}}</h1>
 <h3 id="subtitle">Adwokat</h3>
-{{#slick-carousel
-  class="ember-carousel"
-  autoplay=true
-  autoplaySpeed=4000
-  slidesToShow=1
-  slidesToScroll=1
-  dots=true
-  fade=true}}
-  <div><img src="images/slide1-big.jpg"></div>
-  <div><img src="images/slide2-big.jpg"></div>
-  <div><img src="images/slide3-big.jpg"></div>
-{{/slick-carousel}}
+{{outlet}}
 <footer>
 	<address>
     Dane kontaktowe:<br>
     Kancelaria adwokacka<br>
     Adwokat Szymon Bogdański<br>
     <br>
-    <div>
-      53-329 Wrocław, PL. Powstańców Śląskich 17 A/216<br>
+    <div class="pull-left">
+      {{#link-to "kontakt"}}53-329 Wrocław, PL. Powstańców Śląskich 17 A/216{{/link-to}}<br>
       tel. 501 358 285 / e-mail: <a href="mailto:bogdanski@lexfeni.pl">bogdanski@lexfeni.pl</a>
     </div>
+    {{#link-to "kontakt"}}{{fa-icon "map-marker"}}{{/link-to}}
 	</address>
 </footer>

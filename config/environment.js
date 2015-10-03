@@ -2,6 +2,15 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' maps.googleapis.com 'unsafe-eval' mt0.googleapis.com",
+      'font-src': "'self' fonts.gstatic.com",
+      'connect-src': "'self'",
+      'img-src': "'self' maps.gstatic.com csi.gstatic.com data: maps.googleapis.com mt0.googleapis.com mt1.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+      'media-src': "'self'"
+    },
     modulePrefix: 'bogdanski',
     environment: environment,
     baseURL: '/',

@@ -1,21 +1,44 @@
-body {
+@import "compass";
+@import "bootstrap";
 
-	> .ember-view {
+body > .ember-view {
 		width: 600px;
 		margin: 0 auto;
-	}
+}
+
+h3#subtitle{
+	text-transform: uppercase;
+}
 	
-	h1, h3 {
-		color: black;
-		text-align: center;
-		letter-spacing: 4px;
+h1, h3 {
+	color: black!important;
+	text-align: center;
+	letter-spacing: 4px;
+	
+	a {
+		color: inherit;
+		&:hover {
+			text-decoration: none;	
+		}
 	}
+}
 
-	.slick-slide img{
-		margin: 0 auto;
-	}
+.slick-slide img{
+	margin: 0 auto;
+	width: 100%;
+}
 
-	address {
-		text-transform: uppercase;
-	}
+address {
+	text-transform: uppercase;
+}
+
+.g-map-canvas {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 1em;
+}
+
+.fa-map-marker {
+	font-size: 38px;
+	margin-left: 10px;
 }
