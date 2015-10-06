@@ -2,18 +2,31 @@
 @import "bootstrap";
 @import "mixins/maintain-ratio";
 @import "mixins/breakpoint";
-@import "mixins/responsive-image";
+//@import "mixins/responsive-image";
+@import "mixins/responsive-image-up-to-xs";
 
 //TODO add background of whole site
 body {
 	font-size: 10px;
 	@include breakpoint(md) {
     	font-size: 14px;
+    	@include background-size(cover);	
+		background: {
+			image: image-url("background-big.jpg");	//TODO add smaller images for mobile/tablet
+			repeat: no-repeat;
+			// Set a background color that will be displayed while the background image is loading 
+			color: white;
+			attachment: fixed;
+			position: center center;
+		}
   	}
 	> .ember-view {
-		width: 600px;
+		width: 900px;
 		max-width: 95%;
 		margin: 0 auto;
+		background: white;
+		padding: 1px 0;
+		min-height: 100vh;
 	}
 }
 
@@ -38,34 +51,37 @@ h3 {
 	font-size: 1.7em;
 }
 .slide{
-	@include maintain-ratio(16 9);
+	@include maintain-ratio(16 7);
+	@include background-size(cover);
+	background-repeat: no-repeat;
+	background-position: top left;
 }
 
 //TODO use responsive image in some way, maybe not for all breakpoints
 .slide-1{
-	background: {
-	      image: image-url("lg/slide1.jpg");
-	 }
-	//@include responsive-image(slide1);
+	// background: {
+	//       image: image-url("lg/slide1.jpg");
+	//  }
+	@include responsive-image-up-to-xs(slide1);
 }
 
 .slide-2{
-	background: {
-	      image: image-url("lg/slide2.jpg");
-	 }
-	//@include responsive-image(slide2);
+	// background: {
+	//       image: image-url("lg/slide2.jpg");
+	//  }
+	@include responsive-image-up-to-xs(slide2);
 }
 
 .slide-3{
-	background: {
-	      image: image-url("lg/slide3.jpg");
-	 }
-	//@include responsive-image(slide3);
+	// background: {
+	//       image: image-url("lg/slide3.jpg");
+	//  }
+	@include responsive-image-up-to-xs(slide3);
 }
 
 .g-map-canvas {
 	width: 100%;
-	@include maintain-ratio(16 9);
+	@include maintain-ratio(16 7);
   // height: 400px;
   	margin-bottom: 1em;
 }
@@ -77,4 +93,8 @@ h3 {
 
 div.contact {
 	max-width: 85%;
+}
+
+footer{
+	padding-left: 0.5em;
 }

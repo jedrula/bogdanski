@@ -1,17 +1,13 @@
 @mixin responsive-image($name) {
-  @if length($name) < 1 or length($name) > 2 {
+  @if length($name) < 1 or length($name) > 1 {
     @warn "$dir must be a single value.";
   }
 
-  	@include background-size(cover);
-  	repeat: no-repeat;
-    position: top left;
-
-    background: {
+  background: {
 	      image: image-url("xxs/" + $name + ".jpg");
 	}
 
-	@include breakpoint(xs) {
+  @include breakpoint(xs) {
   		background: {
 	      image: image-url("xs/" + $name + ".jpg");
 	    }
@@ -21,17 +17,18 @@
   		background: {
 	      image: image-url("sm/" + $name + ".jpg");
 	    }
-  	}
+	}
+ 
 
 	@include breakpoint(md) {
   		background: {
 	      image: image-url("md/" + $name + ".jpg");
 	    }
-  	}
+	}
   
-  	@include breakpoint(lg) {
-  		background: {
-	      image: image-url("lg/" + $name + ".jpg");
-	    }
-  	}
+	@include breakpoint(lg) {
+		background: {
+      image: image-url("lg/" + $name + ".jpg");
+    }
+	}
 }
