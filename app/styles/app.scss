@@ -1,30 +1,10 @@
 @import "compass";
 @import "bootstrap";
+@import "mixins/maintain-ratio";
+@import "mixins/breakpoint";
+@import "mixins/responsive-image";
 
-@mixin breakpoint($class) {
-  @if $class == xs {
-    @media (max-width: 767px) { @content; }
-  }
- 
-  @else if $class == sm {
-    @media (min-width: 768px) { @content; }
-  }
- 
-  @else if $class == md {
-    @media (min-width: 992px) { @content; }
-  }
- 
-  @else if $class == lg {
-    @media (min-width: 1200px) { @content; }
-  }
- 
-  @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
-  }
-}
-
-
-
+//TODO add background of whole site
 body {
 	font-size: 10px;
 	@include breakpoint(md) {
@@ -32,14 +12,11 @@ body {
   	}
 	> .ember-view {
 		width: 600px;
-		max-width: 100%;
+		max-width: 95%;
 		margin: 0 auto;
 	}
 }
 
-
-	
-	
 h1, h3 {
 	color: black!important;
 	text-align: center;
@@ -53,8 +30,6 @@ h1, h3 {
 	}
 }
 
-
-
 h1 {
 	font-size: 2.6em;
 }
@@ -62,16 +37,37 @@ h1 {
 h3 {
 	font-size: 1.7em;
 }
+.slide{
+	@include maintain-ratio(16 9);
+}
 
-.slick-slide img{
-	margin: 0 auto;
-	width: 100%;
+//TODO use responsive image in some way, maybe not for all breakpoints
+.slide-1{
+	background: {
+	      image: image-url("lg/slide1.jpg");
+	 }
+	//@include responsive-image(slide1);
+}
+
+.slide-2{
+	background: {
+	      image: image-url("lg/slide2.jpg");
+	 }
+	//@include responsive-image(slide2);
+}
+
+.slide-3{
+	background: {
+	      image: image-url("lg/slide3.jpg");
+	 }
+	//@include responsive-image(slide3);
 }
 
 .g-map-canvas {
-  width: 100%;
-  height: 400px;
-  margin-bottom: 1em;
+	width: 100%;
+	@include maintain-ratio(16 9);
+  // height: 400px;
+  	margin-bottom: 1em;
 }
 
 .fa-map-marker {
