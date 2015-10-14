@@ -1,4 +1,4 @@
-@mixin responsive-image-up-to-xs($name) {
+@mixin responsive-image-up-to-sm($name) {
   // @if length($name) < 1 or length($name) > 2 {
   //   @warn "$dir must be a single value.";
   // }
@@ -11,5 +11,10 @@
   		background: {
 	      image: image-url("xs/" + $name + ".jpg");
 	    }
-  	}
+  }
+  @include breakpoint(sm) {
+    background: {
+      image: image-url("sm/" + $name + ".jpg");
+    }
+  }
 }

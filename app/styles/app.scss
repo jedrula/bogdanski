@@ -3,11 +3,10 @@
 @import "mixins/maintain-ratio";
 @import "mixins/breakpoint";
 //@import "mixins/responsive-image";
-@import "mixins/responsive-image-up-to-xs";
+@import "mixins/responsive-image-up-to-sm";
 
 $aspect-ratio-width: 500;	//8
 $aspect-ratio-height: 334; //6
-
 a,a:hover {
 	text-decoration: none;
 	color: inherit;
@@ -93,21 +92,21 @@ h3 {
 	// background: {
 	//       image: image-url("lg/slide1.jpg");
 	//  }
-	@include responsive-image-up-to-xs(slide1);
+	@include responsive-image-up-to-sm(slide1);
 }
 
 .slide-2{
 	// background: {
 	//       image: image-url("lg/slide2.jpg");
 	//  }
-	@include responsive-image-up-to-xs(slide2);
+	@include responsive-image-up-to-sm(slide2);
 }
 
 .slide-3{
 	// background: {
 	//       image: image-url("lg/slide3.jpg");
 	//  }
-	@include responsive-image-up-to-xs(slide3);
+	@include responsive-image-up-to-sm(slide3);
 }
 
 .g-map-canvas {
